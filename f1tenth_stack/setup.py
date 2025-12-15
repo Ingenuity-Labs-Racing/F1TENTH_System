@@ -25,7 +25,8 @@ setup(
     entry_points={
         'console_scripts': [
             'throttle_interpolator = f1tenth_stack.throttle_interpolator:main',
-            'tf_publisher = f1tenth_stack.tf_publisher:main'
+            'tf_publisher = f1tenth_stack.tf_publisher:main',
+            'vesc_battery_monitor = f1tenth_stack.vesc_battery_monitor:main'
         ],
     },
 )

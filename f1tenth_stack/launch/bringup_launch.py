@@ -101,6 +101,12 @@ def generate_launch_description():
         name='vesc_driver_node',
         parameters=[LaunchConfiguration('vesc_config')]
     )
+    vesc_battery_monitor_node = Node(
+        package='f1tenth_stack',
+        executable='vesc_battery_monitor',
+        name='vesc_battery_monitor',
+        parameters=[LaunchConfiguration('vesc_config')]
+    )
     throttle_interpolator_node = Node(
         package='f1tenth_stack',
         executable='throttle_interpolator',
@@ -145,6 +151,7 @@ def generate_launch_description():
     ld.add_action(ackermann_to_vesc_node)
     ld.add_action(vesc_to_odom_node)
     ld.add_action(vesc_driver_node)
+    ld.add_action(vesc_battery_monitor_node)
     # ld.add_action(throttle_interpolator_node)
     ld.add_action(urg_node)
     ld.add_action(ackermann_mux_node)

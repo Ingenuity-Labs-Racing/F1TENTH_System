@@ -54,3 +54,16 @@ throttle_interpolator:
     # servo smoother - limits rotation speed and smooths anything above limit
     max_servo_speed: 3.2 # radians/second
     servo_smoother_rate: 75.0 # messages/sec
+
+vesc_battery_monitor:
+  ros__parameters:
+    # voltage threshold for system shutdown (in Volts)
+    voltage_threshold: 9.5
+    # duration voltage must stay below threshold before shutdown (in seconds)
+    check_duration: 1.0
+    # voltage threshold for warnings (in Volts)
+    warning_threshold: 10.0
+    # command to execute for shutdown
+    shutdown_command: 'sudo shutdown -h now'
+    # sudo password for shutdown command
+    sudo_password: 'Jetson123'
